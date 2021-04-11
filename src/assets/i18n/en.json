@@ -1,12 +1,27 @@
 {
+  "NAV": {
+    "SEARCH": "Search Files",
+    "DOWNLOAD": "Downloads",
+    "SHARE": "Share Files",
+    "SETTINGS": "Settings"
+  },
   "PAGES": {
-      "HOME": {
-          "TITLE": "App works !",
-          "GO_TO_DETAIL": "Go to Detail"
-      },
-      "DETAIL": {
-        "TITLE": "Detail page !",
-        "BACK_TO_HOME": "Back to Home"
+    "SHARE": {
+      "SHARE_BTN": "Add File",
+      "TABLE": {
+        "PATH": "Path",
+        "NAME": "Name",
+        "DATE": "Date",
+        "CHECKSUM": "Checksum"
+      }
+    },
+    "HOME": {
+      "TITLE": "App works !",
+      "GO_TO_DETAIL": "Go to Detail"
+    },
+    "DETAIL": {
+      "TITLE": "Detail page !",
+      "BACK_TO_HOME": "Back to Home"
     }
   }
 }
