@@ -13,7 +13,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {ShareModule} from "./share/share.module";
+import {ShareFileModule} from "./share-file/share-file.module";
 import {DownloadModule} from "./download/download.module";
 import {SearchModule} from "./search/search.module";
 import {SettingsModule} from "./settings/settings.module";
@@ -34,7 +34,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     CoreModule,
     SharedModule,
 
-    ShareModule,
+    ShareFileModule,
     DownloadModule,
     SearchModule,
     SettingsModule,

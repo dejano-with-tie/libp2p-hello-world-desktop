@@ -1,4 +1,7 @@
 {
+  "ERRORS": {
+    "FILE_ALREADY_PUBLISHED": "File with identical content already shared"
+  },
   "NAV": {
     "SEARCH": "Search Files",
     "DOWNLOAD": "Downloads",
@@ -11,8 +14,9 @@
       "TABLE": {
         "PATH": "Path",
         "NAME": "Name",
-        "DATE": "Date",
-        "CHECKSUM": "Checksum"
+        "SIZE": "Size",
+        "DATE": "Published At",
+        "CHECKSUM": "Hash"
       }
     },
     "HOME": {
