@@ -10,11 +10,12 @@ import {HeaderComponent} from './components/header/header.component';
 import {LayoutComponent} from "./components/layout/layout.component";
 import {MaterialModule} from "./material.module";
 import {RouterModule} from '@angular/router';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 
 @NgModule({
-  declarations: [PageNotFoundComponent, WebviewDirective, LayoutComponent, HeaderComponent],
+  declarations: [PageNotFoundComponent, WebviewDirective, LayoutComponent, HeaderComponent, ProgressBarComponent],
   imports: [CommonModule, TranslateModule, FormsModule, RouterModule, MaterialModule],
-  exports: [TranslateModule, WebviewDirective, FormsModule, LayoutComponent, HeaderComponent]
+  exports: [TranslateModule, WebviewDirective, FormsModule, LayoutComponent, HeaderComponent, ProgressBarComponent]
 })
 export class SharedModule {
 }

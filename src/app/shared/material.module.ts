@@ -27,6 +27,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTreeModule} from '@angular/material/tree';
 import {CdkTableModule} from "@angular/cdk/table";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 const materialModules = [
   CdkTreeModule,
@@ -44,6 +45,7 @@ const materialModules = [
   MatListModule,
   MatMenuModule,
   MatProgressSpinnerModule,
+  MatProgressBarModule,
   MatPaginatorModule,
   MatRippleModule,
   MatSelectModule,

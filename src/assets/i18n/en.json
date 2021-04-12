@@ -16,7 +16,17 @@
         "NAME": "Name",
         "SIZE": "Size",
         "DATE": "Published At",
+        "STATUS": "Status",
         "CHECKSUM": "Hash"
+      }
+    },
+    "DOWNLOAD": {
+      "TABLE": {
+        "PATH": "Path",
+        "PROGRESS": "Progress",
+        "SIZE": "Size",
+        "DATE": "Started At",
+        "STATUS": "Status"
       }
     },
     "HOME": {
