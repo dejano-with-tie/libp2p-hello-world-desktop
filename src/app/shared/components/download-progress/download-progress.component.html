@@ -1,0 +1,10 @@
+<div style="position: relative">
+  <ng-container *ngIf="value">
+    <mat-progress-bar mode="determinate" [value]="value"></mat-progress-bar>
+    <span class="progress-value">{{ value }}%</span>
+  </ng-container>
+  <ng-container *ngIf="!value">
+    <mat-progress-bar mode="determinate" [value]="0"></mat-progress-bar>
+    <span class="progress-value">---</span>
+  </ng-container>
+</div>

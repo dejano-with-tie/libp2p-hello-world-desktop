@@ -1,15 +1,10 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {MatTableDataSource} from "@angular/material/table";
 import {RestApiService} from "../rest-api.service";
-
-const SOURCE = [
-  {path: '...', progress: 23, size: 10232, status: 'downloading'},
-  {path: '...', progress: 73, size: 10232, status: 'downloading'},
-  {path: '...', progress: 100, size: 10232, status: 'completed'},
-  {path: '...', progress: 0, size: 10232, status: 'starting'},
-];
+import {SocketService} from "../socket.service";
+import {DownloadState, DownloadStatus} from "../model/model";
 
 @Component({
   selector: 'app-download',
@@ -22,17 +17,28 @@ export class DownloadComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   public displayedColumns: string[] = ['path', 'progress', 'size', 'status', 'actions'];
   public dataSource: MatTableDataSource<any>;
+  public Statuses = DownloadStatus;
+  private data: any[];
 
-  constructor(restApi: RestApiService) {
-    const publishedFiles = SOURCE;
-    console.log(publishedFiles);
-    this.dataSource = new MatTableDataSource(publishedFiles);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
+  constructor(
+    private restApi: RestApiService,
+    private socketService: SocketService,
+    private changeDetectorRefs: ChangeDetectorRef
+  ) {
+    this.refreshTable();
 
-  ngAfterViewInit() {
-
+    this.socketService._config.download.observable.subscribe((updates) => {
+      if (!this.data) {
+        return;
+      }
+      updates.forEach(update => {
+        const row = this.data.find(d => d.id === update.id);
+        if (row) {
+          row.progress = update.percentage;
+          row.status = update.status;
+        }
+      });
+    });
   }
 
   applyFilter(event: Event) {
@@ -51,15 +57,42 @@ export class DownloadComponent implements OnInit {
     console.log(row);
   }
 
-  pause(row) {
-    console.log('pause');
+  async pause(row) {
+    const state: DownloadState = await this.restApi.action(row.id, 'PAUSE').toPromise();
+    row.status = state.status;
+    row.progress = state.percentage;
   }
 
-  stop(row) {
-    console.log('stop');
+  async delete(row) {
+    try {
+      await this.restApi.delete(row.id, true).toPromise();
+      this.refreshTable();
+    } catch (e) {
+      // TODO: Failed to delete
+    }
   }
 
-  continue(row) {
-    console.log('continue');
+  async resume(row) {
+    const state: DownloadState = await this.restApi.action(row.id, 'RESUME').toPromise();
+    row.status = state.status;
+    row.progress = state.percentage;
+  }
+
+  replay(row) {
+    console.log('replay');
+  }
+
+  private refreshTable() {
+    this.restApi.getDownloads().subscribe(downloads => {
+      downloads.forEach(download => {
+        if (download.status == DownloadStatus.IN_PROGRESS) {
+          download.progress = null;
+        }
+      });
+      this.data = downloads;
+      this.dataSource = new MatTableDataSource(this.data);
+      this.changeDetectorRefs.detectChanges();
+      this.dataSource.sort = this.sort;
+    });
   }
 }

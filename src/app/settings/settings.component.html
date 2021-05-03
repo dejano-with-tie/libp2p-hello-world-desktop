@@ -1,1 +1,8 @@
-<p>settings works!</p>
+<div>
+  <div *ngFor="let c of config">
+    <mat-form-field class="example-form-field w-2/3 pt-5">
+      <mat-label>{{'PAGES.CONFIG.' + c.label | translate}}</mat-label>
+      <input matInput type="text" [(ngModel)]="c.value" [disabled]="true">
+    </mat-form-field>
+  </div>
+</div>

@@ -1,5 +1,7 @@
 export const AppConfig = {
   production: false,
   environment: 'LOCAL',
-  apiUrl: 'http://localhost:3000/api'
+  apiUrl: 'http://localhost:3000/api',
+  socketUrl: 'http://localhost:3000',
+  socketPath: '/socket.io'
 };

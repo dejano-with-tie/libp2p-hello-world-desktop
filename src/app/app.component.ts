@@ -3,6 +3,9 @@ import {ElectronService} from './core/services';
 import {TranslateService} from '@ngx-translate/core';
 import {AppConfig} from '../environments/environment';
 import {RestApiService} from "./rest-api.service";
+import {timer} from "rxjs";
+import {map, take} from "rxjs/operators";
+import {LogMessage as NgxLogMessage} from 'ngx-log-monitor';
 
 @Component({
   selector: 'app-root',
@@ -13,13 +16,13 @@ export class AppComponent {
   constructor(
     private electronService: ElectronService,
     private translate: TranslateService,
-    private restApi: RestApiService
+    private restApi: RestApiService,
   ) {
     this.translate.setDefaultLang('en');
     console.log('AppConfig', AppConfig);
     (async () => {
-      const me = await restApi.whoAmI().toPromise();
-      console.log(me);
+      // const me = await restApi.whoAmI().toPromise();
+      // console.log(me);
     })();
 
     if (electronService.isElectron) {

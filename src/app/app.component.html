@@ -1,3 +1,8 @@
-<div class="app mat-app-background">
+<!--<mat-spinner [diameter]="50" *ngIf="showSpinner"></mat-spinner>-->
+<!--<mat-progress-bar color="accent" mode="indeterminate" *ngIf="spinnerService.visibility | async"></mat-progress-bar>-->
+<ng-progress #progressBar></ng-progress>
+<div class="flex h-screen mat-app-background">
   <sidebar></sidebar>
 </div>
+<app-status-bar>
+<!--<app-logmonitor></app-logmonitor>-->

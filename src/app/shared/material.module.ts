@@ -28,8 +28,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTreeModule} from '@angular/material/tree';
 import {CdkTableModule} from "@angular/cdk/table";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {MatBottomSheetModule} from "@angular/material/bottom-sheet";
 
 const materialModules = [
+  MatBottomSheetModule,
   CdkTreeModule,
   MatTableModule,
   CdkTableModule,

@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~normalize.css';
 @import 'assets/scss/theme';
 
-@import 'tailwindcss/base';
+//@import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
@@ -13,4 +14,34 @@ app-root {
 
 .mat-drawer-inner-container {
   overflow: visible !important;
+}
+
+/* Log monitor fixes */
+.mat-bottom-sheet-container {
+  min-width: 100vw !important;
+  max-height: 30vh;
+  height: 30vh;
+}
+
+.log-monitor .container {
+  max-width: 100%;
+}
+
+.status-online:before {
+  content: ' \25CF';
+  margin-right: 0.3rem;
+  color: green;
+}
+
+.status-offline:before {
+  content: ' \25CF';
+  margin-right: 0.3rem;
+  color: #595959;
+}
+
+
+.table-container {
+  position: relative;
+  max-height: 60vh;
+  overflow: auto;
 }

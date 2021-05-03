@@ -1,0 +1,11 @@
+<div class="status-bar mat-typography flex flex-row justify-between">
+  <div class="left">
+    <span *ngIf="!id" class="text-gray-500">QmTtEwFvXYkwjCpSVeG2dZFi6mbxfVobg2FqJabgS1bsnD</span>
+    <span *ngIf="id">{{id}}</span>
+    <span>Connected Peers ({{connections}})</span>
+    <span>As Relay: {{'BOOLEAN.' + (nat == 'FullCone') | translate}}</span>
+  </div>
+  <div class="right">
+    <span><span [class]="'status-' + status"></span> {{status}} </span>
+  </div>
+</div>

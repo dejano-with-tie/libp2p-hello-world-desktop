@@ -1,0 +1,41 @@
+.status-bar {
+  position: fixed;
+  height: 2rem;
+  border-top: solid 1px rgba(255, 255, 255, .12);
+  background-color: #424242;
+  color: #fff;
+  box-sizing: border-box;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 0;
+  z-index: 2;
+  line-height: 2rem;
+  text-align: center;
+  padding: 0 2rem 0 2rem;
+}
+
+
+.status-bar-divider {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  bottom: 10%;
+  border-left: 1px solid white;
+}
+
+.left .right {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.right > span, .left > span {
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: rgba(255, 255, 255, .12);
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: rgba(255, 255, 255, .12);
+  padding-right: 1rem;
+  padding-left: 1rem;
+}

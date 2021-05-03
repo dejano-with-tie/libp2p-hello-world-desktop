@@ -1,14 +1,15 @@
 :host {
   display: block;
-  width: 90%;
+  width: 80%;
 }
 
 mat-progress-bar {
   height: 1em;
+  border-radius: 3px;
 }
 
 .progress-value {
   position: absolute;
   top: -20%;
-  left: 50%;
+  left: 48%;
 }

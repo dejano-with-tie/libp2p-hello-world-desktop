@@ -49,6 +49,10 @@
     "@tailwindcss/forms": "0.3.2",
     "@tailwindcss/typography": "0.4.0",
     "ngx-filesize": "2.0.16",
+    "ngx-log-monitor": "1.2.0",
+    "ngx-progressbar": "6.1.0",
+    "ngx-socket-io": "4.0.0",
+    "normalize.css": "8.0.1",
     "tailwindcss": "2.1.1"
   },
   "devDependencies": {

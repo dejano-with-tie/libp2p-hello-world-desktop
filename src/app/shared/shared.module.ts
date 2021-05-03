@@ -10,12 +10,15 @@ import {HeaderComponent} from './components/header/header.component';
 import {LayoutComponent} from "./components/layout/layout.component";
 import {MaterialModule} from "./material.module";
 import {RouterModule} from '@angular/router';
-import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import {DownloadProgressComponent} from "./components/download-progress/download-progress.component";
+import {LogMonitorModule} from "ngx-log-monitor";
+import {BottomSheetOverviewExampleSheet, LogmonitorComponent} from "./components/logmonitor/logmonitor.component";
+import {StatusBarComponent} from "./components/status-bar/status-bar.component";
 
 @NgModule({
-  declarations: [PageNotFoundComponent, WebviewDirective, LayoutComponent, HeaderComponent, ProgressBarComponent],
-  imports: [CommonModule, TranslateModule, FormsModule, RouterModule, MaterialModule],
-  exports: [TranslateModule, WebviewDirective, FormsModule, LayoutComponent, HeaderComponent, ProgressBarComponent]
+  declarations: [PageNotFoundComponent, WebviewDirective, LayoutComponent, HeaderComponent, DownloadProgressComponent, LogmonitorComponent, BottomSheetOverviewExampleSheet, StatusBarComponent],
+  imports: [CommonModule, TranslateModule, FormsModule, RouterModule, MaterialModule, LogMonitorModule],
+  exports: [TranslateModule, WebviewDirective, FormsModule, LayoutComponent, HeaderComponent, DownloadProgressComponent, LogMonitorModule, LogmonitorComponent, StatusBarComponent]
 })
 export class SharedModule {
 }

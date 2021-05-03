@@ -1,0 +1,11 @@
+<div>
+  <log-monitor
+    [logStream]="logStream$ | async"
+    theme="dark"
+
+    [customClass]="'log-monitor'"
+    [animated]="false"
+    [icons]="true"
+    [history]="restoredLogs"
+  ></log-monitor>
+</div>

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {RestApiService} from "../rest-api.service";
 import {MatSort} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
@@ -10,25 +10,27 @@ import {SharedFile} from "../model/model";
   templateUrl: './share-file.component.html',
   styleUrls: ['./share-file.component.scss']
 })
-export class ShareFileComponent implements OnInit, AfterViewInit {
+export class ShareFileComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  public displayedColumns: string[] = ['path', 'size', 'createdAt', 'checksum'];
+  public displayedColumns: string[] = ['path', 'advertisedPath', 'size', 'checksum'];
   public dataSource: MatTableDataSource<SharedFile>;
 
-  constructor(restApi: RestApiService) {
+  constructor(private restApi: RestApiService) {
     (async () => {
-      const publishedFiles = await restApi.published().toPromise();
-      console.log(publishedFiles);
+      const publishedFiles = await restApi.shared().toPromise();
       this.dataSource = new MatTableDataSource(publishedFiles);
-      this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     })();
   }
 
-  ngAfterViewInit() {
+  iconByFileType(mime: string) {
+    if (mime && mime.startsWith('image/')) {
+      return 'image';
+    }
 
+    return 'article';
   }
 
   applyFilter(event: Event) {

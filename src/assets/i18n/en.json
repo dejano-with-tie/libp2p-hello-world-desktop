@@ -3,30 +3,77 @@
     "FILE_ALREADY_PUBLISHED": "File with identical content already shared"
   },
   "NAV": {
-    "SEARCH": "Search Files",
+    "SEARCH": "Search",
     "DOWNLOAD": "Downloads",
-    "SHARE": "Share Files",
-    "SETTINGS": "Settings"
+    "SHARE": "Share",
+    "SETTINGS": "Settings",
+    "NETWORK": "Network"
+  },
+  "BOOLEAN": {
+    "true": "Yes",
+    "false": "No"
   },
   "PAGES": {
+    "CONFIG": {
+      "ID": "Node Id",
+      "TIMEOUT": "Dial timeout",
+      "NAT.UPnP": "NAT UPnP",
+      "NAT.PMP": "NAT PMP",
+      "DISCOVERY": "Discovery mechanisms",
+      "BOOTSTRAP": "Bootstrap peers list",
+      "RELAY": "Relay mode enabled",
+      "HTTP_PORT": "HTTP port",
+      "P2P_PORT": "P2P port",
+      "DOWNLOAD_DIR": "Download directory",
+      "SHARED_DIRS": "Shared directories"
+    },
     "SHARE": {
       "SHARE_BTN": "Add File",
       "TABLE": {
         "PATH": "Path",
         "NAME": "Name",
+        "TYPE": "Type",
         "SIZE": "Size",
         "DATE": "Published At",
         "STATUS": "Status",
+        "ACTIONS": "Actions",
+        "CHECKSUM": "Checksum",
+        "ADVERTISED_PATH": "Advertised Path"
+      }
+    },
+    "SEARCH": {
+      "SEARCH_LABEL": "File name",
+      "TABLE": {
+        "ID": "Id",
+        "PATH": "Path",
+        "NAME": "Name",
+        "SIZE": "Size",
+        "CONNECTION": "Direct Connection",
+        "DATE": "Published At",
+        "STATUS": "Status",
+        "ACTIONS": "Actions",
         "CHECKSUM": "Hash"
       }
     },
     "DOWNLOAD": {
       "TABLE": {
+        "ID": "Id",
         "PATH": "Path",
         "PROGRESS": "Progress",
         "SIZE": "Size",
         "DATE": "Started At",
+        "ACTIONS": "Actions",
         "STATUS": "Status"
+      },
+      "STATUS": {
+        "PENDING": "Pending",
+        "IN_PROGRESS": "In Progress",
+        "PAUSED": "Paused",
+        "COMPLETED_UNVERIFIED": "Unverified",
+        "COMPLETED": "Completed",
+        "COMPLETED_INTEGRITY_FAILED": "COMPLETED_INTEGRITY_FAILED",
+        "FAILED": "Failed",
+        "DELETED": "Deleted"
       }
     },
     "HOME": {
